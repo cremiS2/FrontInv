@@ -34,7 +34,7 @@ export default function Movimentacoes() {
   // Carrega movimentações do backend
   useEffect(() => {
     const token = localStorage.getItem("token");
-    fetch("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/movimentacoes/todos", {
+    fetch("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/movimentacoes/todos", {
       headers: {
         "Authorization": `Bearer ${token}`
       }
@@ -52,7 +52,7 @@ export default function Movimentacoes() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/produto/todos", {
+    fetch("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/produto/todos", {
       headers: {
         "Authorization": `Bearer ${token}`
       }
@@ -61,7 +61,7 @@ export default function Movimentacoes() {
       .then(data => setProdutos(data))
       .catch(erro => console.error("Erro ao carregar produtos:", erro));
 
-    fetch("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/depositos/todos", {
+    fetch("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/depositos/todos", {
       headers: {
         "Authorization": `Bearer ${token}`
       }
@@ -95,7 +95,7 @@ export default function Movimentacoes() {
       return;
     }
 
-    fetch("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/movimentacoes/registrar", {
+    fetch("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/movimentacoes/registrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

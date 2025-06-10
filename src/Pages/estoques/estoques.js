@@ -26,7 +26,7 @@ export default function Estoques() {
 
     const token = localStorage.getItem("token");
 
-    fetch(`https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/estoques/deletar/${estoqueSelecionado.id}`, {
+    fetch(`https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/estoques/deletar/${estoqueSelecionado.id}`, {
       method: "DELETE",
       headers: {
         "Authorization": "Bearer " + token
@@ -55,7 +55,7 @@ export default function Estoques() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/estoques/todos", {
+    fetch("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/estoques/todos", {
       headers: { Authorization: "Bearer " + token }
     })
       .then(res => {
@@ -75,7 +75,7 @@ export default function Estoques() {
       quantidade: parseInt(quantidade)
     };
 
-    fetch("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/estoques/criar", {
+    fetch("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/estoques/criar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

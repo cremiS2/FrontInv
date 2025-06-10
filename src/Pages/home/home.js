@@ -22,14 +22,14 @@ export default function Home() {
   const token = localStorage.getItem("token")
   const headers = { Authorization: `Bearer ${token}` }
 
-  fetch("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/depositos/todos", {
+  fetch("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/depositos/todos", {
     headers
   })
     .then(res => res.json())
     .then(data => setQtdDepositos(data.length))
     .catch(err => console.error("Erro ao buscar depósitos:", err));
 
-  fetch("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/produto/todos", {
+  fetch("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/produto/todos", {
     headers
   })
     .then(res => res.json())
@@ -42,7 +42,7 @@ export default function Home() {
     .catch(err => console.error("Erro ao buscar produtos:", err));
 
   useEffect(() => {
-    fetch("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/movimentacoes/todos", {
+    fetch("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/movimentacoes/todos", {
       headers
     })
       .then(res => res.json())

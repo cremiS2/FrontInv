@@ -56,7 +56,7 @@ export default function Produtos() {
 
   const token = localStorage.getItem("token");
 
-  fetch(`https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/estoques/todos`, {
+  fetch(`https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/estoques/todos`, {
     headers: {
       "Authorization": "Bearer " + token
     }
@@ -69,7 +69,7 @@ export default function Produtos() {
       const estoque = estoques.find(e => e.produto && e.produto.id === produtoSelecionado.id);
 
       if (estoque) {
-        return fetch(`https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/estoques/deletar/${estoque.id}`, {
+        return fetch(`https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/estoques/deletar/${estoque.id}`, {
           method: "DELETE",
           headers: {
             "Authorization": "Bearer " + token
@@ -81,7 +81,7 @@ export default function Produtos() {
     })
     .then(() => {
       // 3. Agora deletar o produto
-      return fetch(`https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/produto/deletar/${produtoSelecionado.id}`, {
+      return fetch(`https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/produto/deletar/${produtoSelecionado.id}`, {
         method: "DELETE",
         headers: {
           "Authorization": "Bearer " + token
@@ -102,7 +102,7 @@ export default function Produtos() {
 
   //GET por id para informações
   function abrirModalDetalhes(produto) {
-    fetch(`https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/produto/${produto.id}`, {
+    fetch(`https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/produto/${produto.id}`, {
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("token")
       }
@@ -124,7 +124,7 @@ export default function Produtos() {
   }
 
   useEffect(() => {
-    fetch("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/produto/todos", {
+    fetch("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/produto/todos", {
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("token")
       }
@@ -155,7 +155,6 @@ export default function Produtos() {
       nome: nome,
       preco: parseFloat(preco),
       codigo: codigo,
-      medida: medida,
       imgUrl: urlImg,
       descricao: descricao,
     };
@@ -163,8 +162,8 @@ export default function Produtos() {
     const tokenJWT = localStorage.getItem("token");
 
     const url = editando
-      ? `https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/produto/atualizar/${produtoSelecionado.id}`
-      : "https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/produto/cadastrar";
+      ? `https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/produto/atualizar/${produtoSelecionado.id}`
+      : "https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/produto/cadastrar";
 
     const method = editando ? "PUT" : "POST";
 
@@ -210,9 +209,7 @@ export default function Produtos() {
               <th>ID do Produto</th>
               <th>Nome do Produto</th>
               <th>Preço</th>
-              <th>Código do Produto</th>
               <th>Descrição</th>
-              <th>Medida</th>
               <th>Opções</th>
             </tr>
           </thead>
@@ -222,9 +219,7 @@ export default function Produtos() {
                 <td>{p.id}</td>
                 <td>{p.nome}</td>
                 <td>{p.preco.toFixed(2)}</td>
-                <td>{p.codigo}</td>
                 <td className="descricao-coluna">{p.descricao}</td>
-                <td>{p.medida}</td>
                 <td>
                   <span onClick={() => editarProduto(p)} title="Editar" style={{ cursor: "pointer" }}>✏️</span>
                   <span onClick={() => abrirModalDeletar(p)} title="Excluir" style={{ cursor: "pointer", marginLeft: "8px" }}>🗑️</span>
@@ -254,20 +249,6 @@ export default function Produtos() {
             onChange={e => setPreco(e.target.value)}
             step="0.01"
             min="0"
-          />
-          <input
-            type="text"
-            placeholder="Código"
-            required
-            value={codigo}
-            onChange={e => setCodigo(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Unidade de Medida (Kg, L, Ml...)"
-            required
-            value={medida}
-            onChange={e => setMedida(e.target.value)}
           />
           <input
             type="text"

@@ -13,7 +13,7 @@ export default function Cadastro() {
         e.preventDefault();
 
         try {
-            const response = await axios.post("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/auth/register", {
+            const response = await axios.post("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/auth/register", {
                 login,
                 senha,
                 role

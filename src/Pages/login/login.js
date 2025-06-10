@@ -13,7 +13,7 @@ export default function Login() {
         event.preventDefault();
 
         try {
-            const response = await axios.post("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/auth/login", {
+            const response = await axios.post("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/auth/login", {
                 login: login,
                 senha: senha
             });

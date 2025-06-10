@@ -53,7 +53,7 @@ export default function Depositos() {
   function confirmarExclusao() {
     if (!depositoSelecionado) return;
 
-    fetch(`https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/depositos/deletar/${depositoSelecionado.id}`, {
+    fetch(`https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/depositos/deletar/${depositoSelecionado.id}`, {
       method: "DELETE",
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("token")
@@ -83,8 +83,8 @@ export default function Depositos() {
     const tokenJWT = localStorage.getItem("token");
 
     const url = editando
-      ? `https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/depositos/atualizar/${depositoSelecionado.id}`
-      : "https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/depositos/criar";
+      ? `https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/depositos/atualizar/${depositoSelecionado.id}`
+      : "https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/depositos/criar";
 
     const method = editando ? "PUT" : "POST";
 
@@ -114,7 +114,7 @@ export default function Depositos() {
   }
 
   useEffect(() => {
-    fetch("https://projeto-inventario-grdrgfgcgpd0cbgu.brazilsouth-01.azurewebsites.net/depositos/todos", {
+    fetch("https://inventariocremasco-a2cpgqb8hngjeqap.brazilsouth-01.azurewebsites.net/depositos/todos", {
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("token")
       }
