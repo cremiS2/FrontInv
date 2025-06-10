@@ -1,0 +1,25 @@
+.estoques-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-self: center;
+  margin: 30px;
+  width: 80%;
+}
+
+.estoques-header h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.estoques-header button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1rem;
+  margin: 4px 2px;
+  cursor: pointer;
+}

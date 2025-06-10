@@ -1,0 +1,111 @@
+.movimentacoes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-self: center;
+  margin: 30px;
+  width: 80%;
+}
+
+.movimentacoes-header h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.movimentacoes-header button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1rem;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.modal-movimentacao {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 100%;
+  max-width: 450px;
+  border: none;
+  border-radius: 12px;
+  padding: 30px;
+  background: #f7f7f7;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-movimentacao form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-movimentacao h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.modal-movimentacao input,
+.modal-movimentacao textarea {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.modal-deposito input:focus,
+.modal-deposito textarea:focus {
+  outline: none;
+  border: 1px solid #333;
+}
+
+.modal-movimentacao textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.modal-movimentacao button {
+  padding: 12px;
+  background: #ffffff;
+  color: black;
+  border: 1px solid black;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.5s ease;
+}
+
+.modal-movimentacao button:hover {
+  background: black;
+  color: white;
+}
+
+.modal-movimentacao select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+}
+
+.modal-movimentacao select:focus {
+  border-color: #0066ff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.2);
+}
